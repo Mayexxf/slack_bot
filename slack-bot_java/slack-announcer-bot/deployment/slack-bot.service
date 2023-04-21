@@ -1,0 +1,17 @@
+[Unit]
+Description=Slack meetUp bot
+After=syslog.target network.target
+
+[Service]
+SuccessExitStatus=143
+
+User=meetup
+
+Type=simple
+
+WorkingDirectory=/usr/slack-bot
+ExecStart=/usr/bin/java -jar -Dspring.profiles.active=remote-prod slackbot.jar
+ExecStop=/bin/kill -15 $MAINPID
+
+[Install]
+WantedBy=multi-user.target

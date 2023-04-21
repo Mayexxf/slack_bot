@@ -1,0 +1,35 @@
+server:
+  port: 8099
+app:
+  debug: true
+  messageSource:
+    debug: false
+  inform[0]:
+    time: 15
+    message: "Через ${app.inform[0].time} минут"
+  inform[1]:
+    time: 5
+    message: "Через ${app.inform[1].time} минут"
+  inform[2]:
+    time: 0
+    message: ":rocket: Начинаем!"
+slack:
+  bot:
+    token:
+    admin:
+    adminIds:
+    channelStart:
+yandex:
+  api:
+    token:
+
+resource:
+  file-path:
+    yandex:
+    localFile:
+
+spring:
+  data:
+    redis:
+      host:
+      port:
